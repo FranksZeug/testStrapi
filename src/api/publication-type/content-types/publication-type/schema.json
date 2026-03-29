@@ -4,8 +4,8 @@
   "info": {
     "singularName": "publication-type",
     "pluralName": "publication-types",
-    "displayName": "Publication Type",
-    "description": "Type classification for publications"
+    "displayName": "Publikationstyp",
+    "description": "Art der Publikation (z. B. Artikel, Buch, Bericht)"
   },
   "options": {
     "draftAndPublish": false
@@ -24,7 +24,7 @@
       "type": "relation",
       "relation": "oneToMany",
       "target": "api::publication.publication",
-      "mappedBy": "publication_type"
+      "mappedBy": "Publikationsart"
     }
   }
 }

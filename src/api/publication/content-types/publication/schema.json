@@ -4,8 +4,8 @@
   "info": {
     "singularName": "publication",
     "pluralName": "publications",
-    "displayName": "Publication",
-    "description": "Scientific publication with metadata"
+    "displayName": "Publikation",
+    "description": "Wissenschaftliche Publikation mit Metadaten"
   },
   "options": {
     "draftAndPublish": true
@@ -33,7 +33,7 @@
         }
       }
     },
-    "abstract": {
+    "Abstract": {
       "type": "richtext",
       "pluginOptions": {
         "i18n": {
@@ -41,7 +41,15 @@
         }
       }
     },
-    "publication_date": {
+    "Inhalt": {
+      "type": "richtext",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
+    },
+    "Publikationsdatum": {
       "type": "date",
       "pluginOptions": {
         "i18n": {
@@ -66,13 +74,13 @@
       },
       "unique": true
     },
-    "authors": {
+    "Autoren": {
       "type": "relation",
       "relation": "manyToMany",
       "target": "api::author.author",
       "inversedBy": "publications"
     },
-    "publication_type": {
+    "Publikationsart": {
       "type": "relation",
       "relation": "manyToOne",
       "target": "api::publication-type.publication-type",
@@ -84,7 +92,7 @@
       "target": "api::keyword.keyword",
       "inversedBy": "publications"
     },
-    "topics": {
+    "Themen": {
       "type": "relation",
       "relation": "manyToMany",
       "target": "api::topic.topic",

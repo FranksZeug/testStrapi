@@ -4,8 +4,8 @@
   "info": {
     "singularName": "author",
     "pluralName": "authors",
-    "displayName": "Author",
-    "description": "Authors for scientific publications"
+    "displayName": "Autor",
+    "description": "Personen, die an Publikationen mitwirken"
   },
   "options": {
     "draftAndPublish": false
@@ -31,7 +31,7 @@
       "type": "relation",
       "relation": "manyToMany",
       "target": "api::publication.publication",
-      "mappedBy": "authors"
+      "mappedBy": "Autoren"
     }
   }
 }

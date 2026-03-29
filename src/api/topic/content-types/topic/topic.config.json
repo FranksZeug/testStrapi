@@ -2,6 +2,9 @@
   "settings": {
     "defaultSortBy": "path",
     "defaultSortOrder": "ASC",
-    "mainField": "path"
+    "mainField": "name"
+  },
+  "layouts": {
+    "list": ["path", "level", "name", "parent_topic"]
   }
 }

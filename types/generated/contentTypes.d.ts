@@ -433,8 +433,8 @@ export interface AdminUser extends Struct.CollectionTypeSchema {
 export interface ApiAuthorAuthor extends Struct.CollectionTypeSchema {
   collectionName: 'authors';
   info: {
-    description: 'Authors for scientific publications';
-    displayName: 'Author';
+    description: 'Personen, die an Publikationen mitwirken';
+    displayName: 'Autor';
     pluralName: 'authors';
     singularName: 'author';
   };
@@ -469,8 +469,8 @@ export interface ApiAuthorAuthor extends Struct.CollectionTypeSchema {
 export interface ApiKeywordKeyword extends Struct.CollectionTypeSchema {
   collectionName: 'keywords';
   info: {
-    description: 'Keywords for publication indexing';
-    displayName: 'Keyword';
+    description: 'Schlagw\u00F6rter zur Verschlagwortung von Publikationen';
+    displayName: 'Schlagwort';
     pluralName: 'keywords';
     singularName: 'keyword';
   };
@@ -505,8 +505,8 @@ export interface ApiPublicationTypePublicationType
   extends Struct.CollectionTypeSchema {
   collectionName: 'publication_types';
   info: {
-    description: 'Type classification for publications';
-    displayName: 'Publication Type';
+    description: 'Art der Publikation (z. B. Artikel, Buch, Bericht)';
+    displayName: 'Publikationstyp';
     pluralName: 'publication-types';
     singularName: 'publication-type';
   };
@@ -541,8 +541,8 @@ export interface ApiPublicationTypePublicationType
 export interface ApiPublicationPublication extends Struct.CollectionTypeSchema {
   collectionName: 'publications';
   info: {
-    description: 'Scientific publication with metadata';
-    displayName: 'Publication';
+    description: 'Wissenschaftliche Publikation mit Metadaten';
+    displayName: 'Publikation';
     pluralName: 'publications';
     singularName: 'publication';
   };
@@ -555,18 +555,24 @@ export interface ApiPublicationPublication extends Struct.CollectionTypeSchema {
     };
   };
   attributes: {
-    abstract: Schema.Attribute.RichText &
+    Abstract: Schema.Attribute.RichText &
       Schema.Attribute.SetPluginOptions<{
         i18n: {
           localized: true;
         };
       }>;
-    authors: Schema.Attribute.Relation<'manyToMany', 'api::author.author'>;
+    Autoren: Schema.Attribute.Relation<'manyToMany', 'api::author.author'>;
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
     Doi: Schema.Attribute.String &
       Schema.Attribute.Unique &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    Inhalt: Schema.Attribute.RichText &
       Schema.Attribute.SetPluginOptions<{
         i18n: {
           localized: true;
@@ -578,16 +584,16 @@ export interface ApiPublicationPublication extends Struct.CollectionTypeSchema {
       'oneToMany',
       'api::publication.publication'
     >;
-    publication_date: Schema.Attribute.Date &
+    Publikationsart: Schema.Attribute.Relation<
+      'manyToOne',
+      'api::publication-type.publication-type'
+    >;
+    Publikationsdatum: Schema.Attribute.Date &
       Schema.Attribute.SetPluginOptions<{
         i18n: {
           localized: true;
         };
       }>;
-    publication_type: Schema.Attribute.Relation<
-      'manyToOne',
-      'api::publication-type.publication-type'
-    >;
     publishedAt: Schema.Attribute.DateTime;
     Sperrfrist: Schema.Attribute.Date &
       Schema.Attribute.SetPluginOptions<{
@@ -601,6 +607,7 @@ export interface ApiPublicationPublication extends Struct.CollectionTypeSchema {
           localized: true;
         };
       }>;
+    Themen: Schema.Attribute.Relation<'manyToMany', 'api::topic.topic'>;
     title: Schema.Attribute.String &
       Schema.Attribute.Required &
       Schema.Attribute.SetPluginOptions<{
@@ -608,7 +615,6 @@ export interface ApiPublicationPublication extends Struct.CollectionTypeSchema {
           localized: true;
         };
       }>;
-    topics: Schema.Attribute.Relation<'manyToMany', 'api::topic.topic'>;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -618,6 +624,7 @@ export interface ApiPublicationPublication extends Struct.CollectionTypeSchema {
 export interface ApiTabelleTabelle extends Struct.CollectionTypeSchema {
   collectionName: 'tabelles';
   info: {
+    description: 'Tabellarische Inhalte';
     displayName: 'Tabelle';
     pluralName: 'tabelles';
     singularName: 'tabelle';
@@ -655,8 +662,8 @@ export interface ApiTabelleTabelle extends Struct.CollectionTypeSchema {
 export interface ApiTopicTopic extends Struct.CollectionTypeSchema {
   collectionName: 'topics';
   info: {
-    description: 'Topics to categorize publications';
-    displayName: 'Topic';
+    description: 'Themenhierarchie zur Einordnung von Publikationen';
+    displayName: 'Thema';
     pluralName: 'topics';
     singularName: 'topic';
   };

@@ -4,8 +4,8 @@
   "info": {
     "singularName": "keyword",
     "pluralName": "keywords",
-    "displayName": "Keyword",
-    "description": "Keywords for publication indexing"
+    "displayName": "Schlagwort",
+    "description": "Schlagwörter zur Verschlagwortung von Publikationen"
   },
   "options": {
     "draftAndPublish": false

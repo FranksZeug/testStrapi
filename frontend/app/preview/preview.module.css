@@ -1,0 +1,81 @@
+.wrap {
+  width: 800px;
+  margin: 0 auto;
+  padding: 2rem 1.25rem 3rem;
+  font-family: var(--font-geist-sans), system-ui, sans-serif;
+  line-height: 1.5;
+  color: #111;
+}
+
+.header {
+  margin-bottom: 1.5rem;
+}
+
+.badge {
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: #555;
+  margin: 0 0 0.5rem;
+}
+
+.title {
+  font-size: 1.75rem;
+  font-weight: 600;
+  margin: 0 0 0.35rem;
+  line-height: 1.2;
+}
+
+.subtitle {
+  margin: 0;
+  font-size: 1.1rem;
+  color: #444;
+}
+
+.meta {
+  display: grid;
+  grid-template-columns: 8.5rem 1fr;
+  gap: 0.35rem 1rem;
+  font-size: 0.95rem;
+  margin: 0 0 1.75rem;
+}
+
+.meta dt {
+  margin: 0;
+  color: #666;
+  font-weight: 500;
+}
+
+.meta dd {
+  margin: 0;
+}
+
+.section h2 {
+  font-size: 1rem;
+  margin: 0 0 0.5rem;
+}
+
+.rich {
+  font-size: 0.95rem;
+}
+
+.rich :global(p) {
+  margin: 0 0 0.75rem;
+}
+
+.muted {
+  color: #666;
+}
+
+.error {
+  color: #8b0000;
+  word-break: break-word;
+}
+
+.wrap :global(code) {
+  font-family: var(--font-geist-mono), ui-monospace, monospace;
+  font-size: 0.88em;
+  background: #f4f4f4;
+  padding: 0.1em 0.35em;
+  border-radius: 4px;
+}

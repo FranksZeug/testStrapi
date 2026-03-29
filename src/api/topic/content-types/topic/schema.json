@@ -4,8 +4,8 @@
   "info": {
     "singularName": "topic",
     "pluralName": "topics",
-    "displayName": "Topic",
-    "description": "Topics to categorize publications"
+    "displayName": "Thema",
+    "description": "Themenhierarchie zur Einordnung von Publikationen"
   },
   "options": {
     "draftAndPublish": false
@@ -47,7 +47,7 @@
       "type": "relation",
       "relation": "manyToMany",
       "target": "api::publication.publication",
-      "mappedBy": "topics"
+      "mappedBy": "Themen"
     }
   }
 }

@@ -4,7 +4,8 @@
   "info": {
     "singularName": "tabelle",
     "pluralName": "tabelles",
-    "displayName": "Tabelle"
+    "displayName": "Tabelle",
+    "description": "Tabellarische Inhalte"
   },
   "options": {
     "draftAndPublish": true
